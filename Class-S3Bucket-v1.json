@@ -5,7 +5,7 @@
       "S3Bucket": {
          "Type": "AWS::S3::Bucket",
          "Properties": {
-            "BucketName": "www.ksgroup999.info",
+            "BucketName": "<YOUR-BUCKET-NAME>",
             "WebsiteConfiguration": {
                "IndexDocument": "index.html",
                "ErrorDocument": "error.html"
@@ -24,7 +24,7 @@
                      "Effect": "Allow",
                      "Resource": {"Fn::Join": ['', ['arn:aws:s3:::', {"Ref": "S3Bucket"}, '/*'] ]},
                      "Principal": {
-                        "AWS": { "Fn::Join":  ['', ["arn:aws:iam::863342294131", ":root"]] }
+                        "AWS": { "Fn::Join":  ['', ["arn:aws:iam::<YOUR-ACCOUNT-ID>", ":root"]] }
                      }
                   }
                ]
